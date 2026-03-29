@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,8 +168,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .loading-text {
@@ -271,9 +277,10 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>🎨 Procesador de Colores y Talles</h1>
+        <h1>🎨 Code composition</h1>
         <p class="subtitle">Subí tu archivo Excel para generar códigos normalizados</p>
 
         <div class="upload-area" id="uploadArea">
@@ -440,7 +447,7 @@
                 const nombreArchivo = response.headers.get('content-disposition')
                     ?.split('filename=')[1]
                     ?.replace(/"/g, '') || 'archivo_actualizado.xlsx';
-                
+
                 const enlace = document.createElement('a');
                 enlace.href = window.URL.createObjectURL(blob);
                 enlace.download = nombreArchivo;
@@ -463,4 +470,5 @@
         }
     </script>
 </body>
+
 </html>
